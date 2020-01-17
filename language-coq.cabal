@@ -1,0 +1,61 @@
+Name:          language-coq
+Version:       0.0.1
+Synopsis:      Language tools for manipulating Coq programs in Haskell
+Description:   Language tools for manipulating Coq programs in Haskell.
+               Curently includes data types and a pretty-printer.
+License:       MIT
+License-file:  LICENSE
+Author:        Valentin Robert
+Maintainer:    valentin.robert.42@gmail.com
+Stability:     Experimental
+Category:      Language, Coq
+Build-type:    Simple
+Cabal-version: 1.22
+
+Source-repository head
+  type:     git
+  location: https://github.com/Ptival/language-coq
+
+Library
+  default-language:  Haskell2010
+  ghc-options:       -Wall -Wno-orphans
+  hs-source-dirs:    lib
+  pkgconfig-depends: zlib
+  build-depends: base          >= 4.9 && < 4.13,
+                 parsec        >= 3.1 && < 3.2,
+                 prettyprinter >= 1.2 && < 1.3,
+                 process       >= 1.6 && < 1.7,
+                 s-cargot      >= 0.1 && < 0.2,
+                 text          >= 1.2 && < 1.3
+  exposed-modules: Language.Coq.Definitions.CLib.Dyn.Make
+                   Language.Coq.Definitions.Engine.EVarKinds
+                   Language.Coq.Definitions.Engine.NameGen
+                   Language.Coq.Definitions.Engine.UState
+                   Language.Coq.Definitions.Interp.ConstrExpr
+                   Language.Coq.Definitions.Interp.GenRedExpr
+                   Language.Coq.Definitions.Kernel.EVar
+                   Language.Coq.Definitions.Kernel.Names
+                   Language.Coq.Definitions.Kernel.Names.DirPath
+                   Language.Coq.Definitions.Kernel.Names.Id
+                   Language.Coq.Definitions.Kernel.Names.KerName
+                   Language.Coq.Definitions.Kernel.Names.KerPair
+                   Language.Coq.Definitions.Kernel.Names.Label
+                   Language.Coq.Definitions.Kernel.Names.MBId
+                   Language.Coq.Definitions.Kernel.Names.ModPath
+                   Language.Coq.Definitions.Kernel.Names.MutInd
+                   Language.Coq.Definitions.Kernel.Names.Name
+                   Language.Coq.Definitions.Kernel.Declarations
+                   Language.Coq.Definitions.Kernel.Univ
+                   Language.Coq.Definitions.Kernel.Univ.Level
+                   Language.Coq.Definitions.Kernel.Univ.RawLevel
+                   Language.Coq.Definitions.Kernel.Univ.Universe
+                   Language.Coq.Definitions.Lib.CAST
+                   Language.Coq.Definitions.Lib.GenArg
+                   Language.Coq.Definitions.Lib.GenArg.ArgT
+                   Language.Coq.Definitions.Lib.Loc
+                   Language.Coq.Definitions.Library.DeclKinds
+                   Language.Coq.Definitions.Library.LibNames
+                   Language.Coq.Definitions.PreTyping.GlobTerm
+                   Language.Coq.Definitions.Vernac.VernacExpr
+                   PrettyPrinter.ToSExp
+                   PrettyPrinter.ToCoqString
